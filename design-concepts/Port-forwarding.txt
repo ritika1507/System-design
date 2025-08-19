@@ -1,0 +1,17 @@
+Port Forwarding (Tunneling)
+
+👉 Definition: It lets you securely access a service running on a remote machine (like a database or web app) as if it were local.
+
+Local port forwarding: Forward a local port to a remote service.
+    ssh -L 8080:localhost:80 user@server
+Connects your localhost:8080 → goes securely through SSH → remote server’s port 80.
+Example: You can access a private web server on the remote machine by opening http://localhost:8080 in your browser.
+
+Remote port forwarding: The opposite → expose your local service to the remote machine.
+    ssh -R 9000:localhost:3000 user@server
+Makes your local service at port 3000 available on the remote:9000.
+
+✅ Use case: Access a database on a server that isn’t exposed to the internet (safe dev access).
+
+⚡ Quick analogy:
+Port forwarding = creating a secret tunnel to access a service that’s otherwise blocked.

@@ -1,0 +1,24 @@
+Jump Host (Proxy / Bastion)
+
+👉 Definition: Sometimes you can’t directly SSH into your target server because of firewalls or network rules.
+You must “hop” through a middle server (jump host / bastion).
+
+Manual way:
+ssh -J user@jumpserver user@targetserver
+
+Connects to jumpserver first, then automatically forwards to targetserver.
+With config (~/.ssh/config):
+Host target
+  HostName targetserver
+  User ubuntu
+  ProxyJump jumpserver
+
+Then just run:
+ssh target
+
+
+✅ Use case: Your company might only expose one bastion/jump box to the internet. From there, you hop into private servers
+inside the network.
+
+⚡ Quick analogy:
+Jump host = going through a checkpoint gate before reaching the actual server.
