@@ -1,0 +1,71 @@
+🗝️ SSH Basics – Notes
+
+
+--------What is SSH?--------
+SSH (Secure Shell) → protocol to securely connect to remote systems.
+Uses encryption to protect commands, passwords, and files.
+
+
+--------How SSH Works--------
+1. Client requests connection → ssh user@server
+2. Server identity checked (~/.ssh/known_hosts)
+3. Authentication
+        Password
+        Public/Private key pair (preferred)
+4. Encrypted session established
+
+
+--------Key-Based Authentication--------
+Private key → stays on local machine (~/.ssh/id_ed25519)
+Public key → copied to server (~/.ssh/authorized_keys)
+Client proves ownership of private key → server grants access
+
+
+--------Important Files (~/.ssh/)--------
+id_ed25519 → private key (keep secret, chmod 600)
+id_ed25519.pub → public key (share with servers)
+authorized_keys → server file with allowed public keys
+known_hosts → remembers trusted servers
+config → shortcuts / key mappings
+
+Example config:
+Host myserver
+  HostName server.com
+  User ubuntu
+  IdentityFile ~/.ssh/id_ed25519
+
+
+
+--------ssh-agent--------
+Stores private keys in memory → no need to type passphrase each time
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+
+
+--------Common Uses--------
+1.      Remote login:
+          ssh user@server
+2.      File transfer:
+          scp file.txt user@server:/path/
+          sftp user@server
+3.      Port forwarding (tunnel):
+          ssh -L 5432:localhost:5432 user@server
+4.      Jump host:
+          ssh -J jumpserver targetserver
+
+
+--------Gotchas--------
+1. Permissions:
+        ~/.ssh → 700
+        Private keys → 600
+2. First-time connection asks to trust server fingerprint
+3. Multiple keys → use ~/.ssh/config
+
+
+👉 SSH = Secure, Key-based, Configurable, Extensible
+
+
+
+
+
+

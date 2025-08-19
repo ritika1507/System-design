@@ -1,0 +1,32 @@
+🔹 Basic Login
+ssh user@server
+
+🔹 Login with a Key
+ssh -i ~/.ssh/id_ed25519 user@server
+
+🔹 Use Host Shortcut (from ~/.ssh/config)
+ssh myserver
+
+🔹 Copy File to Server
+scp file.txt user@server:/remote/path/
+
+🔹 Copy File from Server
+scp user@server:/remote/file.txt ./local/
+
+🔹 Interactive File Transfer
+sftp user@server
+
+🔹 Port Forwarding (Tunnel)
+ssh -L local_port:localhost:remote_port user@server
+
+(e.g. ssh -L 5432:localhost:5432 user@server → forward DB)
+
+🔹 Run Single Remote Command
+ssh user@server "uptime"
+
+🔹 Add Key to Agent
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+
+🔹 Test Connection
+ssh -T git@github.com

@@ -1,0 +1,35 @@
+          🔑 SSH Login Flow
+
++-----------------+                +-------------------+
+|   SSH Client    |                |   SSH Server      |
+| (your machine)  |                | (remote machine)  |
++-----------------+                +-------------------+
+        |                                    |
+        | 1. ssh user@server                 |
+        |----------------------------------->|
+        |                                    |
+        | 2. Server sends host key           |
+        |<-----------------------------------|
+        |                                    |
+        | 3. Client checks known_hosts       |
+        |                                    |
+        | 4. Authentication:                 |
+        |   - Password OR                    |
+        |   - Private Key proves identity    |
+        |----------------------------------->|
+        |                                    |
+        | 5. If key matches authorized_keys  |
+        |   → Access granted                 |
+        |<-----------------------------------|
+        |                                    |
+        | 6. Encrypted session established   |
+        |<===============================>   |
+
+This shows the flow:
+
+1. Client starts connection
+
+2. Server identity verified
+   Authentication with password or SSH keys
+
+3. If keys match → secure encrypted channel
