@@ -1,0 +1,13 @@
+1. What are the key features introduced in Java 8?
+
+Lambda Expressions → Enables functional programming (e.g., (a, b) -> a + b).
+Functional Interfaces → Interfaces with exactly one abstract method (e.g., Runnable, Comparator,
+plus new ones in java.util.function).
+Stream API → Work with collections in a functional way (map, filter, reduce).
+Optional Class → Handle nulls more gracefully.
+Default & Static Methods in Interfaces → Interfaces can have concrete method implementations.
+New Date & Time API (java.time) → Immutable and thread-safe (LocalDate, LocalTime, ZonedDateTime).
+Collectors API → For aggregations like grouping, partitioning, joining.
+New concurrency improvements → e.g., CompletableFuture.
+
+👉 Interview Tip: When asked, mention Lambda, Streams, Optional, Date/Time API, Default Methods first.

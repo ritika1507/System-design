@@ -1,0 +1,19 @@
+Difference between map() and flatMap()?
+
+map() → transforms each element into one element.
+flatMap() → transforms each element into multiple elements and flattens.
+List<String> words = Arrays.asList("Hello", "World");
+
+// map()
+List<String[]> mapped = words.stream()
+                             .map(word -> word.split(""))
+                             .toList(); 
+// [[H, e, l, l, o], [W, o, r, l, d]]
+
+// flatMap()
+List<String> flatMapped = words.stream()
+                               .flatMap(word -> Arrays.stream(word.split("")))
+                               .toList();
+// [H, e, l, l, o, W, o, r, l, d]
+
+👉 Interview Tip: Use flatMap when you deal with nested structures (lists of lists, etc.).

@@ -1,0 +1,11 @@
+Difference between forEach() and peek()
+
+forEach() → terminal operation (consumes stream).
+peek() → intermediate operation (used mainly for debugging).
+
+Stream.of("A", "B", "C")
+      .peek(s -> System.out.println("Peek: " + s)) // still part of pipeline
+      .forEach(System.out::println);               // executes
+
+
+👉 peek() doesn’t run unless a terminal op is called.

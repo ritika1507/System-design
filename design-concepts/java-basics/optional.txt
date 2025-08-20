@@ -1,0 +1,13 @@
+How does the Optional class work? Handling null values
+
+Optional = container object which may or may not contain a non-null value.
+Optional<String> name = Optional.ofNullable(getName());
+// If present
+name.ifPresent(n -> System.out.println(n.toUpperCase()));
+// Default value
+String result = name.orElse("Default");
+// Avoid NullPointerException
+String upper = name.map(String::toUpperCase).orElse("EMPTY");
+
+
+👉 Best used for return types in methods, not fields.

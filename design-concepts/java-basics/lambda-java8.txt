@@ -1,0 +1,11 @@
+How do you use lambda expressions in Java 8? Provide an example.
+
+Syntax: (parameters) -> expression or (parameters) -> { statements }
+
+// Example: Sorting using Lambda
+List<String> names = Arrays.asList("Tom", "Jerry", "Mickey");
+names.sort((a, b) -> a.compareToIgnoreCase(b));
+System.out.println(names); // [Jerry, Mickey, Tom]
+
+
+👉 Interview Tip: Lambdas are mainly used to implement functional interfaces.

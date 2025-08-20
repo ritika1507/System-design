@@ -1,0 +1,18 @@
+Difference between Predicate, Function, and Consumer interfaces?
+
+All are in java.util.function.
+
+Predicate<T> → takes T input, returns boolean.
+Predicate<String> isLong = s -> s.length() > 5;
+
+Function<T, R> → takes T, returns R.
+Function<String, Integer> lengthFn = s -> s.length();
+
+Consumer<T> → takes T, returns nothing (void).
+Consumer<String> printer = s -> System.out.println(s);
+
+
+👉 Trick:
+Predicate = condition
+Function = transformation
+Consumer = action

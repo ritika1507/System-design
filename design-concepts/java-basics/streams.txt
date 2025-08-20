@@ -1,0 +1,15 @@
+How does the Stream API work? Example
+
+Streams allow declarative processing of collections.
+List<String> names = Arrays.asList("John", "Jane", "Jack", "Tom");
+
+// Get names starting with 'J' and convert to uppercase
+List<String> result = names.stream()
+                           .filter(s -> s.startsWith("J")) // intermediate
+                           .map(String::toUpperCase)       // intermediate
+                           .collect(Collectors.toList());  // terminal
+
+System.out.println(result); // [JOHN, JANE, JACK]
+
+👉 Pipeline = Source → Intermediate Ops → Terminal Op
+Intermediate are lazy, Terminal triggers execution.
