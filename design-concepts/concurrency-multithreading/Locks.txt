@@ -1,0 +1,21 @@
+Difference between synchronized, Lock, and ReentrantLock
+
+1. synchronized
+    Implicit lock on a method/block.
+    Easy to use, automatically releases lock when block exits.
+    Only one thread can access synchronized block/method at a time.
+    No advanced features like tryLock, fairness, interruptible lock.
+
+2. Lock (interface)
+    Provides explicit locking mechanism.
+    Must release lock manually (unlock() in finally block).
+    More flexible than synchronized (supports tryLock, fairness, interruptible lock acquisition).
+
+3. ReentrantLock
+    Concrete implementation of Lock.
+    "Reentrant" → a thread holding the lock can re-acquire it without deadlock.
+    Provides condition variables for fine-grained control (newCondition()).
+    Useful in high-concurrency situations where synchronized is too restrictive.
+
+👉 Interview tip: Say: "For most cases, synchronized is enough. I’d use ReentrantLock when I need advanced features like fairness,
+interruptible waits, or multiple condition variables."

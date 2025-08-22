@@ -1,0 +1,11 @@
+How does the CompletableFuture API work?
+
+    Part of Java 8’s java.util.concurrent.
+    Used for asynchronous programming.
+    Lets you run tasks in background (supplyAsync, runAsync).
+    Supports chaining (thenApply, thenAccept, thenRun).
+    Can combine multiple futures (thenCombine, allOf, anyOf).
+    Exception handling built-in (exceptionally, handle).
+
+👉 Interview tip: "CompletableFuture helps avoid callback hell and makes async code more readable.
+I’ve used it to parallelize API/database calls and then combine results efficiently."
