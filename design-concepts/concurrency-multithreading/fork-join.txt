@@ -1,0 +1,11 @@
+Fork/Join Framework and its advantages
+
+    Introduced in Java 7 (java.util.concurrent.ForkJoinPool).
+    Uses work-stealing algorithm.
+    Designed for problems that can be recursively split into subtasks (divide & conquer).
+    Example: parallel merge sort, recursive computations.
+    Each worker thread can "steal" tasks from others to balance load.
+
+👉 Advantages:
+    Efficient CPU utilization for parallelizable tasks.
+    Better than normal thread pools for recursive decomposition tasks.

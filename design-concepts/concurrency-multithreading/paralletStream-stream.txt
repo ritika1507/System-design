@@ -1,0 +1,7 @@
+Difference between parallelStream() and stream()
+
+stream(): Sequential execution of pipeline operations.
+parallelStream(): Splits tasks into multiple threads (uses ForkJoinPool.commonPool).
+Parallel streams can speed up CPU-bound operations but may cause overhead for small tasks.
+
+👉 Interview tip: Always mention: "Parallel streams should be used carefully — not suitable when tasks are I/O heavy or when order matters."

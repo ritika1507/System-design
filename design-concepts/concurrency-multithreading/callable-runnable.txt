@@ -1,0 +1,12 @@
+Difference between Callable and Runnable
+
+Runnable
+    i.  Returns no result, cannot throw checked exceptions.
+    ii. Used for fire-and-forget tasks.
+
+Callable
+    i.   Returns a result (Future<V>).
+    ii.  Can throw checked exceptions.
+    iii. Typically used with ExecutorService.submit().
+
+👉 Quick one-liner: Runnable is for tasks without return, Callable is for tasks with a return value and exception handling.
